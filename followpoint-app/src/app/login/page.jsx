@@ -1,13 +1,32 @@
 "use client";
 
+import { handleLogin } from "@/actions/user";
+import { FormError } from "@/components/form-error";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function LoginPage() {
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  function inputHandler(event) {
+    const { name, value } = event.target;
+    setInput({ ...input, [name]: value });
+  }
+
   return (
     <>
       <main className="bg-[rgba(27,29,34,1)] min-h-screen flex flex-col justify-center items-center">
         <div className="w-full max-w-xs">
-          <form className="flex flex-col items-center space-y-4">
+          <FormError />
+          <form
+            className="flex flex-col items-center space-y-4"
+            action={() => {
+              handleLogin(input);
+            }}
+          >
             <div className="group w-full">
               <input
                 type="email"
@@ -15,6 +34,7 @@ export default function LoginPage() {
                 placeholder=" "
                 className="input"
                 name="email"
+                onChange={inputHandler}
               />
               <span className="highlight"></span>
               <span className="bar"></span>
@@ -30,6 +50,7 @@ export default function LoginPage() {
                 placeholder=" "
                 className="input"
                 name="password"
+                onChange={inputHandler}
               />
               <span className="highlight"></span>
               <span className="bar"></span>
