@@ -4,6 +4,7 @@ import { Venue } from "@/components/venue";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
+import { Bazar } from "@/components/bazar";
 
 export default function MapEventPage() {
   const orbitRef = useRef();
@@ -18,13 +19,7 @@ export default function MapEventPage() {
     { id: 7, name: "Venue 7", description: "This is Venue 7." },
     { id: 8, name: "Venue 8", description: "This is Venue 8." },
     { id: 9, name: "Venue 9", description: "This is Venue 9." },
-    { id: 10, name: "Venue 10", description: "This is Venue 10." },
-    { id: 11, name: "Venue 11", description: "This is Venue 11." },
-    { id: 12, name: "Venue 12", description: "This is Venue 12." },
-    { id: 13, name: "Venue 13", description: "This is Venue 13." },
-    { id: 14, name: "Venue 14", description: "This is Venue 14." },
-    { id: 15, name: "Venue 15", description: "This is Venue 15." },
-    { id: 16, name: "Venue 16", description: "This is Venue 16." },
+    { id: 10, name: "Venue 9", description: "This is Venue 9." },
   ];
 
   useEffect(() => {
@@ -37,12 +32,12 @@ export default function MapEventPage() {
   return (
     <Canvas
       style={{ width: "100vw", height: "100vh" }}
-      camera={{ position: [5, 5, 5], fov: 10 }}
+      // camera={{ position: [5, 5, 5], fov: 10 }}
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 10, 5]} intensity={1} />
-        <Venue data={venuesData} />
+        <Bazar data={venuesData} />
         <OrbitControls ref={orbitRef} />
       </Suspense>
     </Canvas>
