@@ -9,7 +9,7 @@ export function FormError() {
   return (
     <>
       {message && (
-        <div className="rounded-sm text-red-500 hover:cursor-pointer italic text-center py-2">
+        <div className="rounded-sm text-red-500 hover:cursor-pointer italic text-center py-2 mb-9">
           {message}
         </div>
       )}

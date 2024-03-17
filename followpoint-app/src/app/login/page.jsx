@@ -29,7 +29,7 @@ export default function LoginPage() {
           >
             <div className="group w-full">
               <input
-                type="email"
+                // type="email"
                 id="email"
                 placeholder=" "
                 className="input"
