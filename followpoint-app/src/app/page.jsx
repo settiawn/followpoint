@@ -1,8 +1,8 @@
 import EventCard from "@/components/eventCard";
 import DropdownSidebar from "@/components/navbar";
 
-export default async function Home() {
-  const getAllEventData = await fetch(
+export const getAllEventData = async () => {
+  const response = await fetch(
     process.env.NEXT_PUBLIC_BASE_URL + "/api/events",
     {
       method: "GET",
@@ -12,7 +12,16 @@ export default async function Home() {
     }
   );
 
-  const { data } = await getAllEventData.json();
+  if (!response.ok) {
+    throw new Error("Error!");
+  }
+
+  const { data } = await response.json();
+  return data;
+} 
+
+export default async function Home() {
+  const data = await getAllEventData();
 
   return (
     <main className="">
