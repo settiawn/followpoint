@@ -5,14 +5,16 @@ import { TransactionModel } from "@/db/models/transaction";
 import { ObjectId } from "mongodb";
 import axios from "axios";
 import { EventModel } from "@/db/models/event";
+import { UserModel } from "@/db/models/user";
 
 export async function POST(request) {
   try {
     const { eventId, tickets, amount } = await request.json();
     const order_id = uuid();
 
-    const userEmail = request.headers.get("x-email-user");
     const userId = request.headers.get("x-id-user");
+
+    const user = await UserModel.findById(userId);
 
     let snap = new midtransClient.Snap({
       isProduction: false,
@@ -28,7 +30,7 @@ export async function POST(request) {
         secure: true,
       },
       customer_details: {
-        email: userEmail,
+        email: user.email,
       },
     };
 
@@ -57,9 +59,7 @@ export async function POST(request) {
       createdAt: new Date(),
       updatedAt: new Date(),
     });
-    image.png;
-    await EventModel.decrementEventTickets(eventId, tickets);
-
+    
     console.log("masuk post & created the order");
     return NextResponse.json({ orderId: order_id, transactionToken });
   } catch (error) {
@@ -78,16 +78,12 @@ export async function POST(request) {
 
 export async function PATCH(request) {
   try {
-    const { orderId } = await request.json();
+    const { orderId, tickets, eventId } = await request.json();
 
     const order = await TransactionModel.findByOrderId(orderId);
     // console.log(order, "<order dari database by orderId");
     if (!order) throw { name: "OrderNotFound" };
-    console.log(
-      typeof orderId,
-      typeof order.orderId.toString(),
-      "<<<comparing id user"
-    );
+
     if (orderId !== order.orderId.toString()) throw { name: "Forbidden" };
     if (order.paidStatus === true) throw { name: "AlreadyPaid" };
     // console.log("PASSED VALIDATION.");
@@ -103,17 +99,15 @@ export async function PATCH(request) {
       }
     );
 
-    console.log(data.status_code, data.transaction_status, "hasil axios");
+    // console.log(data.status_code, data.transaction_status, "hasil axios");
 
     if (data.status_code === "200" && data.transaction_status === "capture") {
       await TransactionModel.updateOrderById(orderId);
+      await EventModel.decrementEventTickets(eventId, tickets);
       console.log("Updated transaction");
     } else {
       throw { name: "MidtransError" };
     }
-
-    // const order2 = await TransactionModel.findByOrderId(orderId);
-    // console.log(order2, "<<<<<<<<<<<<<<<<<<the order new");
 
     return NextResponse.json({ message: "Transaction success" });
   } catch (error) {

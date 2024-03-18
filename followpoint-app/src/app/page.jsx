@@ -1,5 +1,4 @@
 import EventCard from "@/components/eventCard";
-import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import DropdownSidebar from "@/components/sidebar";
 
@@ -26,7 +25,7 @@ export default async function Home() {
   const data = await getAllEventData();
 
   return (
-    <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
+    <main className="bg-[rgba(27,29,34,1)] min-h-screen">
       <Navbar />
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap -m-1 gap-5">
@@ -35,7 +34,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-      <Footer className="footer" /> 
     </main>
   );
 }

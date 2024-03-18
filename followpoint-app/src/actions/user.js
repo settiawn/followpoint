@@ -49,3 +49,47 @@ export const handleLogin = async (input) => {
 
   return redirect("/");
 };
+
+export const getUserData = async () => {
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_BASE_URL + "/api/user",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: cookies().toString(),
+      },
+    }
+  );
+
+
+  if (!response.ok) {
+    throw new Error("Error!");
+  }
+
+  const {data} = await response.json();
+  delete data.password
+  return data;
+};
+
+export const handleEdit = async (input) => {
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_BASE_URL + "/api/user/edit",
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: cookies().toString(),
+      },
+      body: JSON.stringify(input),
+    }
+  );
+
+  const result = await response.json();
+
+  if (!response.ok) {
+    return redirect("/user/edit?error=" + result.error);
+  }
+
+  return redirect("/user/transactions");
+};
