@@ -24,7 +24,7 @@ export default async function EventDetailPage({ params }) {
 
 	return (
 		<>
-			<main className="bg-[rgba(27,29,34,1)] min-h-screen flex flex-col justify-center items-center mb-20 text-yellow-500 font-extrabold">
+			<main className="bg-[rgba(27,29,34,1)] min-h-screen flex flex-col justify-center items-center text-yellow-500 font-extrabold">
 				<div className="text-2xl mb-8">Event Details</div>
 				<div className="font-bold text-yellow-500 text-5xl">{data.title}</div>
 				<div className="text-white mt-3 mb-5 w-4/6">{data.description}</div>
