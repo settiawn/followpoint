@@ -5,7 +5,7 @@ const eventDB = db.collection("Events");
 export class EventModel {
   static async getAllEvents() {
     try {
-      return (await eventDB.find().toArray())
+      return await eventDB.find().toArray();
     } catch (error) {
       throw error;
     }
@@ -13,9 +13,9 @@ export class EventModel {
 
   static async getEventBySlug(slug) {
     try {
-        return (await eventDB.findOne({slug}))
+      return await eventDB.findOne({ slug });
     } catch (error) {
-        throw error
+      throw error;
     }
   }
 }
