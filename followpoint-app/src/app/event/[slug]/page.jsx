@@ -1,5 +1,6 @@
 import ButtomSlugComponent from "@/components/buttomSlugComponent";
 import Navbar from "@/components/navbar";
+import { formatDate } from "@/utils/dateFormat";
 import Link from "next/link";
 
 export const getEventDetails = async (slug) => {
@@ -40,7 +41,7 @@ export default async function EventDetailPage({ params }) {
         </div>
         <div className="text-white mt-3 mb-5 mx-auto sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 text-center bg-gray-800 bg-opacity-25 p-4 rounded-lg shadow">
           {data.description.split("\n").map((paragraph, idx) => (
-            <p key={idx} className="mb-4 last:mb-0 text-sm">
+            <p key={idx} className="mb-4 last:mb-0 text-sm font-semibold">
               {paragraph}
             </p>
           ))}
@@ -60,7 +61,8 @@ export default async function EventDetailPage({ params }) {
               d="M8 7V3m8 4V3m-9 8h10M3 12l2-2m16 2l-2-2m-6 6h6"
             />
           </svg>
-          Date : <span className="text-white ml-2">{data.date}</span>
+          Date :{" "}
+          <span className="text-white ml-2">{formatDate(data.date)}</span>
         </div>
         <div className="flex items-center justify-center text-yellow-500 text-sm mt-2 mb-6">
           <svg
