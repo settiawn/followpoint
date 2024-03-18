@@ -4,6 +4,7 @@ import midtransClient from "midtrans-client";
 import { TransactionModel } from "@/db/models/transaction";
 import { ObjectId } from "mongodb";
 import axios from "axios";
+import { EventModel } from "@/db/models/event";
 
 export async function POST(request) {
   try {
@@ -31,28 +32,33 @@ export async function POST(request) {
       },
     };
 
-    
-
     const transaction = await snap.createTransaction(parameter);
     const transactionToken = transaction.token;
 
-    const ticketsArray = Object.keys(tickets).map((ticketKey) => {
-      return {
-        eventId: new ObjectId(String(eventId)),
+    const ticketsArray = [];
+
+    Object.entries(tickets).forEach(([key, value]) => {
+      const array = Array.from({ length: value }, () => ({
         ticketId: uuid(),
-        ticketType: ticketKey,
-        quantity: tickets[ticketKey],
-      };
+        type: key,
+      }));
+
+      ticketsArray.push(...array);
     });
 
     await TransactionModel.createTransaction({
       orderId: order_id,
       userId: new ObjectId(String(userId)),
+      eventId: new ObjectId(String(eventId)),
       transactionToken,
       tickets: ticketsArray,
       paidStatus: false,
       paidDate: "",
+      createdAt: new Date(),
+      updatedAt: new Date(),
     });
+    image.png;
+    await EventModel.decrementEventTickets(eventId, tickets);
 
     console.log("masuk post & created the order");
     return NextResponse.json({ orderId: order_id, transactionToken });
@@ -77,7 +83,11 @@ export async function PATCH(request) {
     const order = await TransactionModel.findByOrderId(orderId);
     // console.log(order, "<order dari database by orderId");
     if (!order) throw { name: "OrderNotFound" };
-    console.log(typeof orderId, typeof order.orderId.toString(), "<<<comparing id user");
+    console.log(
+      typeof orderId,
+      typeof order.orderId.toString(),
+      "<<<comparing id user"
+    );
     if (orderId !== order.orderId.toString()) throw { name: "Forbidden" };
     if (order.paidStatus === true) throw { name: "AlreadyPaid" };
     // console.log("PASSED VALIDATION.");
@@ -101,7 +111,6 @@ export async function PATCH(request) {
     } else {
       throw { name: "MidtransError" };
     }
-
 
     // const order2 = await TransactionModel.findByOrderId(orderId);
     // console.log(order2, "<<<<<<<<<<<<<<<<<<the order new");

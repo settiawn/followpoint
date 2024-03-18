@@ -34,9 +34,6 @@ export default function EventBuyTicketPage({ params }) {
 
   useEffect(() => {
     fetchData();
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -52,6 +49,7 @@ export default function EventBuyTicketPage({ params }) {
   const fetchData = async () => {
     const res = await getEventDetails(params.slug);
     setData(res);
+    setLoading(false);
   };
 
   const handlePayButton = async (e) => {

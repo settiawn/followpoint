@@ -45,5 +45,5 @@ export const payTransaction = async (orderId) => {
     return redirect("/?error=" + result.error);
   }
 
-  return redirect("/user/tickets?message=payment success!");
+  return redirect("/user/transactions?message=payment success!");
 };

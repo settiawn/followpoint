@@ -18,7 +18,7 @@ export const getAllEventData = async () => {
 
   const { data } = await response.json();
   return data;
-} 
+};
 
 export default async function Home() {
   const data = await getAllEventData();
