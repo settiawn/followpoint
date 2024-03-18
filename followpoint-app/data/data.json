@@ -10,47 +10,47 @@
     "organizer": "Beats Entertainment Inc.",
     "venueFileName": "concert-festival",
     "tickets": [
-      ["friday", 59.99, 500],
-      ["saturday", 79.99, 500],
-      ["sunday", 69.99, 500]
+      { "ticketId": "e1t1", "name": "friday", "price": 500000, "stock": 500 },
+      { "ticketId": "e1t2", "name": "saturday", "price": 700000, "stock": 500 },
+      { "ticketId": "e1t3", "name": "sunday", "price": 600000, "stock": 500 }
     ],
     "booth": [
-      [
-        "Merch Booth",
-        "Official festival merchandise, including t-shirts, hats, and posters.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694599/metalmerch_vpqgks.jpg",
-        0
-      ],
-      [
-        "Food Truck Fiesta",
-        "A collection of the city's best food trucks offering a variety of cuisines.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694600/53205599947_0d757b1a4b_b_zfipjd.jpg",
-        1
-      ],
-      [
-        "VIP Lounge",
-        "Exclusive lounge area with complimentary drinks, private restrooms, and premium stage views.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694604/underscored-admirals-club-dca-lounge-pavilion_ezimk9.jpg",
-        2
-      ],
-      [
-        "Interactive Art Installations",
-        "Experience and contribute to live art installations created by local artists.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694610/Iregular_LEloi_Daniel_Iregui_SOLSTICE_1_ewuj4x.png",
-        3
-      ],
-      [
-        "Eco Zone",
-        "Learn about sustainability and participate in eco-friendly activities and initiatives.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694601/FZTSQhMWIAAL-NW_re0v8w.jpg",
-        4
-      ],
-      [
-        "Kids' Play Area",
-        "A safe and fun play area for children, featuring interactive games, face painting, and educational workshops.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694601/Rubber-flooring_jrw3p8.jpg",
-        5
-      ]
+      {
+        "name": "Merch Booth",
+        "description": "Official festival merchandise, including t-shirts, hats, and posters.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694599/metalmerch_vpqgks.jpg",
+        "indexPosition": 0
+      },
+      {
+        "name": "Food Truck Fiesta",
+        "description": "A collection of the city's best food trucks offering a variety of cuisines.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694600/53205599947_0d757b1a4b_b_zfipjd.jpg",
+        "indexPosition": 1
+      },
+      {
+        "name": "VIP Lounge",
+        "description": "Exclusive lounge area with complimentary drinks, private restrooms, and premium stage views.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694604/underscored-admirals-club-dca-lounge-pavilion_ezimk9.jpg",
+        "indexPosition": 2
+      },
+      {
+        "name": "Interactive Art Installations",
+        "description": "Experience and contribute to live art installations created by local artists.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694610/Iregular_LEloi_Daniel_Iregui_SOLSTICE_1_ewuj4x.png",
+        "indexPosition": 3
+      },
+      {
+        "name": "Eco Zone",
+        "description": "Learn about sustainability and participate in eco-friendly activities and initiatives.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694601/FZTSQhMWIAAL-NW_re0v8w.jpg",
+        "indexPosition": 4
+      },
+      {
+        "name": "Kids' Play Area",
+        "description": "A safe and fun play area for children, featuring interactive games, face painting, and educational workshops.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694601/Rubber-flooring_jrw3p8.jpg",
+        "indexPosition": 5
+      }
     ],
     "createdAt": "2024-03-17T00:00:00Z",
     "updatedAt": "2024-03-17T00:00:00Z"
@@ -67,72 +67,72 @@
     "organizer": "Culinary Events Ltd.",
     "venueFileName": "bazar",
     "tickets": [
-      ["thursday", 45.0, 1000],
-      ["friday", 45.0, 1000],
-      ["saturday", 55.0, 1000],
-      ["sunday", 55.0, 1000]
+      { "ticketId": "e2t1", "name": "thursday", "price": 45000, "stock": 1000 },
+      { "ticketId": "e2t2", "name": "friday", "price": 45000, "stock": 1000 },
+      { "ticketId": "e2t3", "name": "saturday", "price": 55000, "stock": 1000 },
+      { "ticketId": "e2t4", "name": "sunday", "price": 55000, "stock": 1000 }
     ],
     "booth": [
-      [
-        "The Burger Joint",
-        "Gourmet burgers with a twist, featuring locally sourced ingredients.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695547/hou_food_20160525theburgerjoint_chuckcook_027_1__o5lrxt.jpg",
-        0
-      ],
-      [
-        "Sushi Spectacular",
-        "Fresh, artisanal sushi rolls, nigiri, and sashimi prepared by top sushi chefs.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695544/domestic-event-1_hpfmhw.jpg",
-        1
-      ],
-      [
-        "Vegan Delights",
-        "A variety of delicious and inventive vegan dishes that will delight even the most discerning palates.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695550/dc87a667565611.5b3e08a3afd27_mfmvrz.jpg",
-        2
-      ],
-      [
-        "Italian Street Eats",
-        "Authentic Italian pizzas and pastas, made using traditional recipes and ingredients.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695562/24437fc79efdc297db5cf4a58c28ff58_danzpe.jpg",
-        3
-      ],
-      [
-        "BBQ & Smokery",
-        "Slow-cooked, smoked meats and BBQ favorites with homemade sauces and rubs.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695543/man-grilling-cevapi-and-pljeskavica-meat-on-outdoor-grill-at-a-winter-food-festival-2AF3FGT_k7hx6c.jpg",
-        4
-      ],
-      [
-        "Dessert Oasis",
-        "A sweet paradise featuring cakes, pastries, ice creams, and gourmet desserts.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695542/uss-pharaohs-dessert-oasis-750x422_bbfaef.avif",
-        5
-      ],
-      [
-        "Craft Beer Hub",
-        "Sample a wide range of craft beers from the best local and national breweries.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695550/berlin-germany-august-5-2017russian-craft-beer-stall-at-the-international-berlin-beer-festival-2H4KK2J_d1ajeu.jpg",
-        6
-      ],
-      [
-        "Global Street Food",
-        "Take a culinary tour with street food delicacies from Asia, Latin America, and beyond.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695548/a0001911_main_ltff8b.webp",
-        7
-      ],
-      [
-        "Coffee Connoisseurs",
-        "Explore the world of coffee with tastings, workshops, and barista demonstrations.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695560/IMG_4583_ylcuyq.jpg",
-        8
-      ],
-      [
-        "Cheese & Wine Paradise",
-        "A selection of fine cheeses paired with exquisite wines from around the world.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695546/2022-dca-disney-california-adventure-food-and-wine-festival-nuts-about-cheese-marketplace-booth-4_xmsqle.jpg",
-        9
-      ]
+      {
+        "name": "The Burger Joint",
+        "description": "Gourmet burgers with a twist, featuring locally sourced ingredients.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695547/hou_food_20160525theburgerjoint_chuckcook_027_1__o5lrxt.jpg",
+        "indexPosition": 0
+      },
+      {
+        "name": "Sushi Spectacular",
+        "description": "Fresh, artisanal sushi rolls, nigiri, and sashimi prepared by top sushi chefs.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695544/domestic-event-1_hpfmhw.jpg",
+        "indexPosition": 1
+      },
+      {
+        "name": "Vegan Delights",
+        "description": "A variety of delicious and inventive vegan dishes that will delight even the most discerning palates.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695550/dc87a667565611.5b3e08a3afd27_mfmvrz.jpg",
+        "indexPosition": 2
+      },
+      {
+        "name": "Italian Street Eats",
+        "description": "Authentic Italian pizzas and pastas, made using traditional recipes and ingredients.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695562/24437fc79efdc297db5cf4a58c28ff58_danzpe.jpg",
+        "indexPosition": 3
+      },
+      {
+        "name": "BBQ & Smokery",
+        "description": "Slow-cooked, smoked meats and BBQ favorites with homemade sauces and rubs.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695543/man-grilling-cevapi-and-pljeskavica-meat-on-outdoor-grill-at-a-winter-food-festival-2AF3FGT_k7hx6c.jpg",
+        "indexPosition": 4
+      },
+      {
+        "name": "Dessert Oasis",
+        "description": "A sweet paradise featuring cakes, pastries, ice creams, and gourmet desserts.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695542/uss-pharaohs-dessert-oasis-750x422_bbfaef.avif",
+        "indexPosition": 5
+      },
+      {
+        "name": "Craft Beer Hub",
+        "description": "Sample a wide range of craft beers from the best local and national breweries.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695550/berlin-germany-august-5-2017russian-craft-beer-stall-at-the-international-berlin-beer-festival-2H4KK2J_d1ajeu.jpg",
+        "indexPosition": 6
+      },
+      {
+        "name": "Global Street Food",
+        "description": "Take a culinary tour with street food delicacies from Asia, Latin America, and beyond.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695548/a0001911_main_ltff8b.webp",
+        "indexPosition": 7
+      },
+      {
+        "name": "Coffee Connoisseurs",
+        "description": "Explore the world of coffee with tastings, workshops, and barista demonstrations.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695560/IMG_4583_ylcuyq.jpg",
+        "indexPosition": 8
+      },
+      {
+        "name": "Cheese & Wine Paradise",
+        "description": "A selection of fine cheeses paired with exquisite wines from around the world.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695546/2022-dca-disney-california-adventure-food-and-wine-festival-nuts-about-cheese-marketplace-booth-4_xmsqle.jpg",
+        "indexPosition": 9
+      }
     ],
     "createdAt": "2024-03-17T00:00:00Z",
     "updatedAt": "2024-03-17T00:00:00Z"
@@ -147,104 +147,106 @@
     "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696064/395185821_339709171923254_5896553182782724634_n_w1joos.jpg",
     "organizer": "Harmony Events",
     "venueFileName": "venue",
-    "tickets": [["saturday", 35.0, 800]],
+    "tickets": [
+      { "ticketId": "e3t1", "name": "saturday", "price": 35000, "stock": 800 }
+    ],
     "booth": [
-      [
-        "Vinyl Vintage",
-        "Rare and vintage vinyl records for collectors and enthusiasts.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/130731162424-vvj-booth_d20xvd.jpg",
-        0
-      ],
-      [
-        "Handmade Crafts",
-        "Artisan crafts and handmade goods from local artists.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/a39d9b226828b3b722e52700fb6f49ad_a2fqxi.jpg",
-        1
-      ],
-      [
-        "Gourmet Popcorn",
-        "A variety of flavored popcorn, from classic butter to adventurous new tastes.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696759/20231014_110633_1400x_pdjv30.webp",
-        2
-      ],
-      [
-        "Coffee Corner",
-        "Specialty coffees and teas to warm your night.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/a22f83ec4568a1a8cc508722f44c079e_wusxrr.webp",
-        3
-      ],
-      [
-        "Indie Merch",
-        "Merchandise from the performing artists and bands.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/images-104_gwzxxz.jpg",
-        4
-      ],
-      [
-        "Eco-Friendly Finds",
-        "Sustainable and eco-friendly products for a greener lifestyle.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/Photo_The-SM-Stores-Green-Finds-copy_vnorej.jpg",
-        5
-      ],
-      [
-        "Book Nook",
-        "A cozy corner for book lovers, featuring local authors and literary classics.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/5f8db99781871.image_ofdr8v.jpg",
-        6
-      ],
-      [
-        "Art Alley",
-        "Live art demonstrations and a gallery of local artwork for sale.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696763/Festival_Blog_Header_01c9f257-68f1-4305-8e78-c434da464e48_1086x_olozt6.webp",
-        7
-      ],
-      [
-        "T-Shirt Printing",
-        "Custom t-shirt printing on the spot. Choose a design or create your own!",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696770/img_0726_zpbafb.webp",
-        8
-      ],
-      [
-        "Foodie Lane",
-        "Street food from around the world, offering delicious eats and treats.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695548/a0001911_main_ltff8b.webp",
-        9
-      ],
-      [
-        "Mocktail Bar",
-        "Refreshing and innovative non-alcoholic cocktails.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696762/21317bb2df9726e66955bf2bfb0b96b6_bt7usj.jpg",
-        10
-      ],
-      [
-        "Candle Cove",
-        "Hand-poured, scented candles with unique fragrances.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696768/HelpingHandsforTranquility-selling-at-markets_louhzv.jpg",
-        11
-      ],
-      [
-        "Herbal Haven",
-        "Organic teas, herbs, and wellness products for a healthy lifestyle.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696772/HerbRecap2_cl1jkc.jpg",
-        12
-      ],
-      [
-        "Portrait Sketching",
-        "Get your portrait sketched by talented local artists.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696770/Copy_of_11F1808F-1F68-4E65-B595-5B1BFDC59C5D-3179-0000017E71F3971A-3_ttrjna.jpg",
-        13
-      ],
-      [
-        "Jewelry Junction",
-        "Exquisite handmade jewelry pieces by local artisans.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696782/Apr-2015-011_byjsnn.jpg",
-        14
-      ],
-      [
-        "Gaming Arena",
-        "A mini gaming arena for video game lovers to compete and enjoy.",
-        "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696768/Multiplay-Insomnia-Gaming-Festival-I55_54_kn2gai.jpg",
-        15
-      ]
+      {
+        "name": "Vinyl Vintage",
+        "description": "Rare and vintage vinyl records for collectors and enthusiasts.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/130731162424-vvj-booth_d20xvd.jpg",
+        "indexPosition": 0
+      },
+      {
+        "name": "Handmade Crafts",
+        "description": "Artisan crafts and handmade goods from local artists.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/a39d9b226828b3b722e52700fb6f49ad_a2fqxi.jpg",
+        "indexPosition": 1
+      },
+      {
+        "name": "Gourmet Popcorn",
+        "description": "A variety of flavored popcorn, from classic butter to adventurous new tastes.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696759/20231014_110633_1400x_pdjv30.webp",
+        "indexPosition": 2
+      },
+      {
+        "name": "Coffee Corner",
+        "description": "Specialty coffees and teas to warm your night.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/a22f83ec4568a1a8cc508722f44c079e_wusxrr.webp",
+        "indexPosition": 3
+      },
+      {
+        "name": "Indie Merch",
+        "description": "Merchandise from the performing artists and bands.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696758/images-104_gwzxxz.jpg",
+        "indexPosition": 4
+      },
+      {
+        "name": "Eco-Friendly Finds",
+        "description": "Sustainable and eco-friendly products for a greener lifestyle.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/Photo_The-SM-Stores-Green-Finds-copy_vnorej.jpg",
+        "indexPosition": 5
+      },
+      {
+        "name": "Book Nook",
+        "description": "A cozy corner for book lovers, featuring local authors and literary classics.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696760/5f8db99781871.image_ofdr8v.jpg",
+        "indexPosition": 6
+      },
+      {
+        "name": "Art Alley",
+        "description": "Live art demonstrations and a gallery of local artwork for sale.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696763/Festival_Blog_Header_01c9f257-68f1-4305-8e78-c434da464e48_1086x_olozt6.webp",
+        "indexPosition": 7
+      },
+      {
+        "name": "T-Shirt Printing",
+        "description": "Custom t-shirt printing on the spot. Choose a design or create your own!",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696770/img_0726_zpbafb.webp",
+        "indexPosition": 8
+      },
+      {
+        "name": "Foodie Lane",
+        "description": "Street food from around the world, offering delicious eats and treats.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710695548/a0001911_main_ltff8b.webp",
+        "indexPosition": 9
+      },
+      {
+        "name": "Mocktail Bar",
+        "description": "Refreshing and innovative non-alcoholic cocktails.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696762/21317bb2df9726e66955bf2bfb0b96b6_bt7usj.jpg",
+        "indexPosition": 10
+      },
+      {
+        "name": "Candle Cove",
+        "description": "Hand-poured, scented candles with unique fragrances.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696768/HelpingHandsforTranquility-selling-at-markets_louhzv.jpg",
+        "indexPosition": 11
+      },
+      {
+        "name": "Herbal Haven",
+        "description": "Organic teas, herbs, and wellness products for a healthy lifestyle.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696772/HerbRecap2_cl1jkc.jpg",
+        "indexPosition": 12
+      },
+      {
+        "name": "Portrait Sketching",
+        "description": "Get your portrait sketched by talented local artists.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696770/Copy_of_11F1808F-1F68-4E65-B595-5B1BFDC59C5D-3179-0000017E71F3971A-3_ttrjna.jpg",
+        "indexPosition": 13
+      },
+      {
+        "name": "Jewelry Junction",
+        "description": "Exquisite handmade jewelry pieces by local artisans.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696782/Apr-2015-011_byjsnn.jpg",
+        "indexPosition": 14
+      },
+      {
+        "name": "Gaming Arena",
+        "description": "A mini gaming arena for video game lovers to compete and enjoy.",
+        "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710696768/Multiplay-Insomnia-Gaming-Festival-I55_54_kn2gai.jpg",
+        "indexPosition": 15
+      }
     ],
     "createdAt": "2024-03-17T00:00:00Z",
     "updatedAt": "2024-03-17T00:00:00Z"
