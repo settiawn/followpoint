@@ -1,4 +1,5 @@
 import EventCard from "@/components/eventCard";
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import DropdownSidebar from "@/components/sidebar";
 
@@ -34,6 +35,7 @@ export default async function Home() {
           ))}
         </div>
       </div>
+        <Footer/>
     </main>
   );
 }
