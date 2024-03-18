@@ -29,10 +29,8 @@ export default async function Home() {
       <div>Hello World</div>
       <div>
         {data.map((x, i) => {
-          return(
-            <EventCard data={x} key={i}/>
-          )
-          })}
+          return <EventCard data={x} key={i} />;
+        })}
       </div>
     </main>
   );
