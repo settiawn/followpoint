@@ -33,14 +33,14 @@ export default function MapEventPage() {
   return (
     <Canvas
       style={{ width: "100vw", height: "100vh" }}
-      camera={{ position: [5, 5, 5], fov: 10 }}
+      camera={{ position: [3, 3, 3], fov: 20 }}
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 10, 5]} intensity={1} />
         {/* <Venue data={venuesData} /> */}
-        {/* <Bazar data={venuesData} /> */}
-        <ConcertFestival data={venuesData} />
+        <Bazar data={venuesData} />
+        {/* <ConcertFestival data={venuesData} /> */}
         <OrbitControls ref={orbitRef} />
       </Suspense>
     </Canvas>
