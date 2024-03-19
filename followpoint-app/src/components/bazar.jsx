@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
-import { useGLTF, PerspectiveCamera } from "@react-three/drei";
+import React, { useRef, useState } from "react";
+import { useGLTF, PerspectiveCamera, Html } from "@react-three/drei";
+import { TenantPopup } from "./tenantpopout";
 
 export function Bazar({ data }) {
   const { nodes, materials } = useGLTF("/Bazar.glb");
+  // const [selectedTenant, setSelectedTenant] = useState(null);
 
   const getBoothProps = (index) => {
     const boothsData = [
@@ -71,53 +73,75 @@ export function Bazar({ data }) {
   };
 
   return (
-    <group dispose={null}>
-      <group name="Bazar">
-        <group name="Bazar_1" rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
-          <mesh
-            name="Floor"
-            castShadow
-            receiveShadow
-            geometry={nodes.Floor.geometry}
-            material={materials.Color_I02}
-            position={[-1195.203, -495.898, 0]}
-            rotation={[Math.PI / 2, 0, 0]}
-          />
-          {data.map((item, index) => {
-            const { position, geometry, material } = getBoothProps(index);
-            return (
-              <mesh
-                key={index}
-                name={item.name}
-                castShadow
-                receiveShadow
-                geometry={nodes[geometry].geometry}
-                material={materials[material]}
-                position={position}
-              />
-            );
-          })}
-          <mesh
-            name="Mesh60_Model"
-            castShadow
-            receiveShadow
-            geometry={nodes.Mesh60_Model.geometry}
-            material={materials.Color_G06}
-            position={[-1195.203, -495.898, -13.269]}
-            rotation={[Math.PI / 2, 0, 0]}
+    <>
+      <group dispose={null}>
+        <group name="Bazar">
+          <group name="Bazar_1" rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
+            <mesh
+              name="Floor"
+              castShadow
+              receiveShadow
+              geometry={nodes.Floor.geometry}
+              material={materials.Color_I02}
+              position={[-1195.203, -495.898, 0]}
+              rotation={[Math.PI / 2, 0, 0]}
+            />
+            {data.map((item, index) => {
+              const { position, geometry, material } = getBoothProps(index);
+              const iconPosition = [
+                position[0],
+                position[1],
+                position[2] + 500,
+              ];
+
+              return (
+                <group key={index}>
+                  <mesh
+                    name={item.name}
+                    castShadow
+                    receiveShadow
+                    geometry={nodes[geometry].geometry}
+                    material={materials[material]}
+                    position={position}
+                    // onClick={() => setSelectedTenant(item)}
+                  />
+                  <Html position={iconPosition} scaleFactor={10} center>
+                    <div
+                      style={{
+                        color: "white",
+                        backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        padding: "5px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.name}
+                    </div>
+                  </Html>
+                </group>
+              );
+            })}
+            <mesh
+              name="Mesh60_Model"
+              castShadow
+              receiveShadow
+              geometry={nodes.Mesh60_Model.geometry}
+              material={materials.Color_G06}
+              position={[-1195.203, -495.898, -13.269]}
+              rotation={[Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <PerspectiveCamera
+            name="Camera"
+            makeDefault={false}
+            far={179.536}
+            near={0.023}
+            fov={35}
+            position={[-2.804, 1.738, 2.096]}
+            rotation={[-0.587, -0.801, -0.446]}
           />
         </group>
-        <PerspectiveCamera
-          name="Camera"
-          makeDefault={false}
-          far={179.536}
-          near={0.023}
-          fov={35}
-          position={[-2.804, 1.738, 2.096]}
-          rotation={[-0.587, -0.801, -0.446]}
-        />
       </group>
-    </group>
+    </>
   );
 }
 
