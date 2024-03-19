@@ -26,7 +26,7 @@ export default function MapEventPage({ params }) {
   const fetchData = async () => {
     const res = await getEventDetails(params.slug);
     setVenuesData(res);
-    setLoading(false)
+    setLoading(false);
   };
 
   const toggleSidebarWithTenant = (tenantData) => {
@@ -49,22 +49,22 @@ export default function MapEventPage({ params }) {
   }, []);
   return (
     <>
-    {loading ? (
-            <div className="text-white">Loading the tickets...</div>
-          ) : (
-      <Canvas
-        style={{ width: "100vw", height: "100vh" }}
-        camera={{ position: [3, 3, 3], fov: 20 }}
-      >
-        <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[0, 10, 5]} intensity={1} />
-          <Venue data={booth} onTenantClick={toggleSidebarWithTenant} />
-          {/* <Bazar data={venuesData} onTenantClick={toggleSidebarWithTenant} /> */}
-          {/* <ConcertFestival data={venuesData} /> */}
-          <OrbitControls ref={orbitRef} />
-        </Suspense>
-      </Canvas>
+      {loading ? (
+        <div className="text-white">Loading the tickets...</div>
+      ) : (
+        <Canvas
+          style={{ width: "100vw", height: "100vh" }}
+          camera={{ position: [3, 3, 3], fov: 20 }}
+        >
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[0, 10, 5]} intensity={1} />
+            <Venue data={booth} onTenantClick={toggleSidebarWithTenant} />
+            {/* <Bazar data={booth} onTenantClick={toggleSidebarWithTenant} /> */}
+            {/* <ConcertFestival data={venuesData} /> */}
+            <OrbitControls ref={orbitRef} />
+          </Suspense>
+        </Canvas>
       )}
       <MouseControl />
       {isSidebarVisible && (
