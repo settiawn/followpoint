@@ -1,3 +1,5 @@
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import TicketCard from "@/components/ticketCard";
 import { cookies } from "next/headers";
 
@@ -26,6 +28,8 @@ export default async function UserTicketsPage() {
   const data = await getUserTransactions();
   return (
     <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
+      <Navbar />
+      
       <div className="container mx-auto px-4 py-8 text-white">
 
       
@@ -41,6 +45,7 @@ export default async function UserTicketsPage() {
       </div>
 
       </div>
+      <Footer className="footer" /> 
     </main>
   );
 }

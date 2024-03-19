@@ -1,8 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import QRCode from 'qrcode'
 
 export default function TicketCard({ data }) {
   const [showDetails, setShowDetails] = useState(false);
+  const [qrCodes, setQrCodes] = useState([]);
+
+  useEffect(() => {
+    const generateQRCodes = async () => {
+      const qrCodePromises = data.tickets.map((x) => QRCode.toDataURL(x.ticketId));
+      const qrCodeDataUrls = await Promise.all(qrCodePromises);
+      setQrCodes(qrCodeDataUrls);
+    };
+
+    generateQRCodes();
+  }, [data.tickets]);
+
 
   return (
     <div className="m-1 border-sky-100 border p-2">
@@ -10,7 +23,7 @@ export default function TicketCard({ data }) {
         {data.eventInfo.title}
       </div>
       <div>{data.eventInfo.date}</div>
-      <div>ORDER ID : {data.orderId}</div>
+      <div>ORDER ID: {data.orderId.substring(data.orderId.length - 5)}</div>
       <div>
         Transaction status:{" "}
         <span
@@ -33,7 +46,10 @@ export default function TicketCard({ data }) {
       )}
       {showDetails && (
         <div className="p-1">
-          {data.tickets.map((x, i) => (
+          {data.tickets.map((x, i) => {
+            let src = ''
+            QRCode.toDataURL(x.ticketId).then((y) => y)
+            return (
             <div key={i} className="p-2 border m-1">
               <div>
                 Day:{" "}
@@ -43,10 +59,12 @@ export default function TicketCard({ data }) {
                   )?.name
                 }
               </div>
-              <div>booking code: {x.ticketId}</div>
-              <div>Ticket Type: {x.type}</div>
+              <div>
+              <img src={qrCodes[i]} alt={`QR code for ${x.ticketId}`} />
+              </div>
+              <div>Ticket Code: {x.type}-{x.ticketId.substring(x.ticketId.length - 5)}</div>
             </div>
-          ))}
+          )})}
         </div>
       )}
     </div>
