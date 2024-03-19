@@ -3,6 +3,7 @@ import { createTransaction, payTransaction } from "@/actions/payment";
 import { getEventDetails } from "../page";
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import Navbar from "@/components/navbar";
 
 export default function EventBuyTicketPage({ params }) {
   const [data, setData] = useState({});
@@ -101,7 +102,9 @@ export default function EventBuyTicketPage({ params }) {
         data-client-key={process.env.MIDTRANS_SERVER_KEY}
       />
 
-      <main className="container mx-auto p-4 bg-[rgba(27,29,34,1)]">
+
+      <main className="flex flex-col min-h-screen mx-auto p-4 bg-[rgba(27,29,34,1)]">
+        <Navbar />
         <h1 className="text-3xl font-bold mb-4 text-">Checkout</h1>
         {loading ? (
           <div className="text-white">Loading...</div>
