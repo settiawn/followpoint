@@ -8,10 +8,24 @@ import { ConcertFestival } from "@/components/concert-festival";
 import { Bazar } from "@/components/bazar";
 import SideBarMap from "@/components/sidebarmap";
 import MouseControl from "@/components/mouseControl";
+import { useRouter } from "next/navigation";
+import { getEventDetails } from "../page";
 
-export default function MapEventPage() {
+export default function MapEventPage({ params }) {
+  const [venuesData, setVenuesData] = useState([]);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [currentTenant, setCurrentTenant] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const booth = venuesData.booth;
+
+  const fetchData = async () => {
+    const res = await getEventDetails(params.slug);
+    setVenuesData(res);
+  };
 
   const toggleSidebarWithTenant = (tenantData) => {
     setCurrentTenant(tenantData);
@@ -23,19 +37,6 @@ export default function MapEventPage() {
   };
 
   const orbitRef = useRef();
-
-  const venuesData = [
-    { id: 1, name: "Venue 1", description: "This is Venue 1." },
-    { id: 2, name: "Venue 2", description: "This is Venue 2." },
-    { id: 3, name: "Venue 3", description: "This is Venue 3." },
-    { id: 4, name: "Venue 4", description: "This is Venue 4." },
-    { id: 5, name: "Venue 5", description: "This is Venue 5." },
-    { id: 6, name: "Venue 6", description: "This is Venue 6." },
-    { id: 7, name: "Venue 7", description: "This is Venue 6." },
-    { id: 8, name: "Venue 8", description: "This is Venue 6." },
-    { id: 9, name: "Venue 9", description: "This is Venue 6." },
-    { id: 10, name: "Venue 10", description: "This is Venue 6." },
-  ];
 
   useEffect(() => {
     if (orbitRef.current) {
@@ -53,7 +54,7 @@ export default function MapEventPage() {
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[0, 10, 5]} intensity={1} />
-          <Venue data={venuesData} onTenantClick={toggleSidebarWithTenant} />
+          <Venue data={booth} onTenantClick={toggleSidebarWithTenant} />
           {/* <Bazar data={venuesData} onTenantClick={toggleSidebarWithTenant} /> */}
           {/* <ConcertFestival data={venuesData} /> */}
           <OrbitControls ref={orbitRef} />
