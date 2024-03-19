@@ -92,3 +92,8 @@ export const handleEdit = async (input) => {
 
   return redirect("/user/transactions");
 };
+
+export async function handleLogout() {
+  cookies().delete("Authorization");
+  redirect("/login");
+}

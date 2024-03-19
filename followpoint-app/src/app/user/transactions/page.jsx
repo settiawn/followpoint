@@ -25,8 +25,11 @@ export const getUserTransactions = async () => {
 export default async function UserTicketsPage() {
   const data = await getUserTransactions();
   return (
-    <main>
-      <div>Ini user tickets page</div>
+    <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
+      <div className="container mx-auto px-4 py-8 text-white">
+
+      
+      <div className="font-bold text-center text-yellow-500 text-2xl mb-5">My Transactions</div>
       <div>
         {data.map((x, i) => {
           return (
@@ -35,6 +38,8 @@ export default async function UserTicketsPage() {
             </>
           );
         })}
+      </div>
+
       </div>
     </main>
   );

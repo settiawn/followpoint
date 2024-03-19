@@ -29,40 +29,42 @@ export default function EditUserPage() {
   }
 
   return (
-    <main>
-      <div>Ini edit user page</div>
-      <FormError />
-      <div>
-        <form
-          action={() => {
-            handleEdit(input);
-          }}
-          className="flex flex-col"
-        >
-          <label htmlFor="">Name *required</label>
-          <input
-            type="text"
-            name="name"
-            onChange={inputHandler}
-            value={input ? input.name : ""}
-          />
-          <label htmlFor="">Email *required</label>
-          <input
-            type="email"
-            name="newEmail"
-            onChange={inputHandler}
-            value={input ? input.newEmail : ""}
-          />
+    <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
+      <div className="container mx-auto px-4 py-8">
+        <div className="font-bold text-yellow-500 text-2xl text-center mt-4">Edit Profile</div>
+        <FormError />
+        <div>
+          <form
+            action={() => {
+              handleEdit(input);
+            }}
+            className="flex flex-col"
+          >
+            <label htmlFor="" className="text-white">Name *required</label>
+            <input
+              type="text"
+              name="name"
+              onChange={inputHandler}
+              value={input ? input.name : ""}
+            />
+            <label htmlFor="" className="text-white">Email *required</label>
+            <input
+              type="email"
+              name="newEmail"
+              onChange={inputHandler}
+              value={input ? input.newEmail : ""}
+            />
 
-          <label htmlFor="">New Password</label>
-          <input type="password" name="newPassword" onChange={inputHandler} />
+            <label htmlFor="" className="text-white">New Password</label>
+            <input type="password" name="newPassword" onChange={inputHandler} />
 
-          <label htmlFor="">
-            Enter old Password to confirm change *required
-          </label>
-          <input type="password" name="password" onChange={inputHandler} />
-          <button>Edit</button>
-        </form>
+            <label htmlFor="" className="text-white">
+              Enter old Password to confirm change *required
+            </label>
+            <input type="password" name="password" onChange={inputHandler} />
+            <button className="text-white p-2 hover:bg-sky-400">Edit</button>
+          </form>
+        </div>
       </div>
     </main>
   );
