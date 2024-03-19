@@ -4,8 +4,8 @@ import { Venue } from "@/components/venue";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { Bazar } from "@/components/bazar";
 import { ConcertFestival } from "@/components/concert-festival";
+import { Bazar } from "@/components/bazar";
 
 export default function MapEventPage() {
   const orbitRef = useRef();
@@ -16,6 +16,10 @@ export default function MapEventPage() {
     { id: 3, name: "Venue 3", description: "This is Venue 3." },
     { id: 4, name: "Venue 4", description: "This is Venue 4." },
     { id: 5, name: "Venue 5", description: "This is Venue 5." },
+    { id: 6, name: "Venue 6", description: "This is Venue 6." },
+    { id: 6, name: "Venue 6", description: "This is Venue 6." },
+    { id: 6, name: "Venue 6", description: "This is Venue 6." },
+    { id: 6, name: "Venue 6", description: "This is Venue 6." },
     { id: 6, name: "Venue 6", description: "This is Venue 6." },
   ];
 
