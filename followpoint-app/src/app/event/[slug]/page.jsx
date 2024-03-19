@@ -85,8 +85,8 @@ export default async function EventDetailPage({ params }) {
             <span className="text-white ml-2">{data.organizer}</span>
           </div>
           <ButtomSlugComponent data={data} />
+          <Footer />
         </main>
-        {/* <Footer className="footer" /> */}
       </div>
     </>
   );

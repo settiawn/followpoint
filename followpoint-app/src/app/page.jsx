@@ -26,16 +26,18 @@ export default async function Home() {
   const data = await getAllEventData();
 
   return (
-    <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
-      <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-wrap -m-1 gap-5">
-          {data.map((event, index) => (
-            <EventCard data={event} key={index} />
-          ))}
+    <>
+      <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
+        <Navbar />
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-grow -m-1 gap-5">
+            {data.map((event, index) => (
+              <EventCard data={event} key={index} />
+            ))}
+          </div>
         </div>
-      </div>
-      <Footer className="footer" /> 
-    </main>
+        <Footer />
+      </main>
+    </>
   );
 }

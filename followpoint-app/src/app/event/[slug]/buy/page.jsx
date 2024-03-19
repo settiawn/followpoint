@@ -181,7 +181,7 @@ export default function EventBuyTicketPage({ params }) {
             </form>
           )}
         </div>
-        <Footer className="footer" />
+        <Footer />
       </main>
     </>
   );
