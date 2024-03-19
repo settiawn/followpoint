@@ -1,10 +1,8 @@
 import React, { useRef, useState } from "react";
-import { useGLTF, PerspectiveCamera, Html } from "@react-three/drei";
-import { TenantPopup } from "./tenantpopout";
+import { useGLTF, Html } from "@react-three/drei";
 
-export function Bazar({ data }) {
+export function Bazar({ data, onTenantClick }) {
   const { nodes, materials } = useGLTF("/Bazar.glb");
-  // const [selectedTenant, setSelectedTenant] = useState(null);
 
   const getBoothProps = (index) => {
     const boothsData = [
@@ -103,19 +101,19 @@ export function Bazar({ data }) {
                     geometry={nodes[geometry].geometry}
                     material={materials[material]}
                     position={position}
-                    // onClick={() => setSelectedTenant(item)}
                   />
                   <Html position={iconPosition} scaleFactor={10} center>
-                    <div
+                    <button
                       style={{
                         color: "white",
                         backgroundColor: "rgba(0, 0, 0, 0.5)",
                         padding: "5px",
                         textAlign: "center",
                       }}
+                      onClick={() => onTenantClick(item)}
                     >
                       {item.name}
-                    </div>
+                    </button>
                   </Html>
                 </group>
               );
@@ -130,15 +128,6 @@ export function Bazar({ data }) {
               rotation={[Math.PI / 2, 0, 0]}
             />
           </group>
-          <PerspectiveCamera
-            name="Camera"
-            makeDefault={false}
-            far={179.536}
-            near={0.023}
-            fov={35}
-            position={[-2.804, 1.738, 2.096]}
-            rotation={[-0.587, -0.801, -0.446]}
-          />
         </group>
       </group>
     </>
