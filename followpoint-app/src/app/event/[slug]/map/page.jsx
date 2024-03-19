@@ -17,10 +17,10 @@ export default function MapEventPage() {
     { id: 4, name: "Venue 4", description: "This is Venue 4." },
     { id: 5, name: "Venue 5", description: "This is Venue 5." },
     { id: 6, name: "Venue 6", description: "This is Venue 6." },
-    { id: 6, name: "Venue 6", description: "This is Venue 6." },
-    { id: 6, name: "Venue 6", description: "This is Venue 6." },
-    { id: 6, name: "Venue 6", description: "This is Venue 6." },
-    { id: 6, name: "Venue 6", description: "This is Venue 6." },
+    { id: 6, name: "Venue 7", description: "This is Venue 6." },
+    { id: 6, name: "Venue 8", description: "This is Venue 6." },
+    { id: 6, name: "Venue 9", description: "This is Venue 6." },
+    { id: 6, name: "Venue 10", description: "This is Venue 6." },
   ];
 
   useEffect(() => {
