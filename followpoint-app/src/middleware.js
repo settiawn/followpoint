@@ -4,7 +4,7 @@ import { decodeToken } from "./db/helpers/jwt";
 
 export async function middleware(request) {
   try {
-    console.log("Middleware");
+    console.log("Touched Middleware");
     let token = cookies().get("Authorization")?.value.split(" ")[1];
     if (!token) {
       return NextResponse.json(
@@ -20,7 +20,6 @@ export async function middleware(request) {
     const payload = await decodeToken(token);
     const requestHeaders = new Headers(request.headers);
     requestHeaders.set("x-id-user", payload._id);
-    requestHeaders.set("x-email-user", payload.email);
 
     const response = NextResponse.next({
       request: {
@@ -42,5 +41,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/api/user/:path*", "/api/buy/initiate/:path*"]
+  matcher: ["/api/user/:path*", "/api/buy/initiate/:path*"],
 };

@@ -54,21 +54,21 @@ export default function EventBuyTicketPage({ params }) {
 
   const handlePayButton = async (e) => {
     e.preventDefault();
-    console.log("clicked", input, totalPrice);
+    // console.log("clicked", input, totalPrice);
     const response = await createTransaction(input, totalPrice, data._id);
 
-    console.log(response.transactionToken, "<<< transaction token");
-    console.log("test");
+    // console.log(response.transactionToken, "<<< transaction token");
+    // console.log("test");
 
     window.snap.pay(response.transactionToken, {
       onSuccess: function (result) {
         //fetch patch
-        payTransaction(response.orderId);
+        payTransaction(response.orderId, input, data._id);
       },
     });
   };
 
-  console.log(input);
+  // console.log(input);
 
   return (
     <>
