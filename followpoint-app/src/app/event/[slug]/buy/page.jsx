@@ -13,17 +13,41 @@ export default function EventBuyTicketPage({ params }) {
 
   function inputHandler(event) {
     const { name, value } = event.target;
-    setInput((prevInput) => ({
-      ...prevInput,
-      [name]: parseInt(value, 10),
-    }));
+    const inputValue = parseInt(value, 10);
+
+    const ticket = data.tickets.find((ticket) => ticket.ticketId === name);
+
+    if (ticket) {
+      if (!isNaN(inputValue) && inputValue >= 0 && inputValue <= ticket.stock) {
+        setInput((prevInput) => ({
+          ...prevInput,
+          [name]: inputValue,
+        }));
+      } else {
+        setInput((prevInput) => ({
+          ...prevInput,
+          [name]: prevInput[name] || 0,
+        }));
+      }
+    }
   }
 
   const handleIncrement = (name) => {
-    setInput((prevInput) => ({
-      ...prevInput,
-      [name]: (parseInt(prevInput[name]) || 0) + 1,
-    }));
+    const ticket = data.tickets.find((ticket) => ticket.ticketId === name);
+    if (ticket) {
+      setInput((prevInput) => {
+        const currentValue = parseInt(prevInput[name]) || 0;
+        const newValue = currentValue + 1;
+        if (newValue <= ticket.stock) {
+          return {
+            ...prevInput,
+            [name]: newValue,
+          };
+        } else {
+          return prevInput;
+        }
+      });
+    }
   };
 
   const handleDecrement = (name) => {
@@ -35,9 +59,6 @@ export default function EventBuyTicketPage({ params }) {
 
   useEffect(() => {
     fetchData();
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
   }, []);
 
   useEffect(() => {
@@ -53,6 +74,7 @@ export default function EventBuyTicketPage({ params }) {
   const fetchData = async () => {
     const res = await getEventDetails(params.slug);
     setData(res);
+    setLoading(false);
   };
 
   const handlePayButton = async (e) => {
@@ -79,6 +101,7 @@ export default function EventBuyTicketPage({ params }) {
         src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key={process.env.MIDTRANS_SERVER_KEY}
       />
+
 
       <main className="flex flex-col min-h-screen mx-auto p-4 bg-[rgba(27,29,34,1)]">
         <Navbar />
@@ -119,10 +142,11 @@ export default function EventBuyTicketPage({ params }) {
                         </td>
                         <td>
                           <input
+                            type="number"
                             name={ticket.ticketId}
                             value={input[ticket.ticketId] || 0}
                             onChange={inputHandler}
-                            className="text-yellow-500 w-6 text-center justify-center items-center bg-black"
+                            className="text-black border-lg appearance-none w-full py-2 px-3 leading-tight focus:outline-none"
                           />
                         </td>
                         <td>

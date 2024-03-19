@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { handleLogout } from "@/actions/user";
 
 export default function DropdownSidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,14 @@ export default function DropdownSidebar() {
               Events
             </div>
           </Link>
+          <Link href="/user/transactions">
+            <div
+              className="text-yellow-400 text-lg mb-4 hover:text-white"
+              onClick={toggleSidebar}
+            >
+              Transactions
+            </div>
+          </Link>
           <Link href="/login">
             <div
               className="text-yellow-400 text-lg mb-4 hover:text-white"
@@ -40,14 +49,20 @@ export default function DropdownSidebar() {
               Login
             </div>
           </Link>
-          <Link href="/user/tickets">
+          <Link href="/user/edit">
             <div
               className="text-yellow-400 text-lg mb-4 hover:text-white"
               onClick={toggleSidebar}
             >
-              Tickets
+              Edit Profile
             </div>
           </Link>
+          <div
+            className="text-yellow-400 text-lg mb-4 hover:text-white hover:cursor-pointer"
+            onClick={() => {toggleSidebar; handleLogout()}}
+          >
+            Logout
+          </div>
         </div>
       </div>
       <style jsx>{`
