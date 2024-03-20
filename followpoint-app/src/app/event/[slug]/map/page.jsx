@@ -59,8 +59,8 @@ export default function MapEventPage({ params }) {
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[0, 10, 5]} intensity={1} />
-            <Venue data={booth} onTenantClick={toggleSidebarWithTenant} />
-            {/* <Bazar data={booth} onTenantClick={toggleSidebarWithTenant} /> */}
+            {/* <Venue data={booth} onTenantClick={toggleSidebarWithTenant} /> */}
+            <Bazar data={booth} onTenantClick={toggleSidebarWithTenant} />
             {/* <ConcertFestival data={venuesData} /> */}
             <OrbitControls ref={orbitRef} />
           </Suspense>
