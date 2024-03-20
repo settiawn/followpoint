@@ -1,6 +1,9 @@
 export default function SideBarMap({ tenantData, onClose }) {
   return (
-    <aside className="fixed top-0 right-0 h-full w-full md:w-96 bg-black bg-opacity-90 text-white p-6 overflow-auto z-50 shadow-lg">
+    <aside
+      style={{ color: "white" }}
+      className="fixed top-0 right-0 h-full w-full md:w-96 bg-black bg-opacity-90 p-6 overflow-auto z-50 shadow-lg"
+    >
       <button
         onClick={onClose}
         className="absolute top-4 right-4 bg-gray-700 hover:bg-gray-600 p-2 rounded-full"

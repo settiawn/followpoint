@@ -8,8 +8,10 @@ import { ConcertFestival } from "@/components/concert-festival";
 import { Bazar } from "@/components/bazar";
 import SideBarMap from "@/components/sidebarmap";
 import MouseControl from "@/components/mouseControl";
-import { useRouter } from "next/navigation";
 import { getEventDetails } from "../page";
+import BackButton from "@/components/backbuttonmap";
+import CentralParkVenue from "@/components/CentralParkMap";
+import GreenFieldVenue from "@/components/GreenFieldMap";
 
 export default function MapEventPage({ params }) {
   const [venuesData, setVenuesData] = useState([]);
@@ -20,8 +22,6 @@ export default function MapEventPage({ params }) {
   useEffect(() => {
     fetchData();
   }, []);
-
-  const booth = venuesData.booth;
 
   const fetchData = async () => {
     const res = await getEventDetails(params.slug);
@@ -49,19 +49,38 @@ export default function MapEventPage({ params }) {
   }, []);
   return (
     <>
+      {venuesData.venueFileName === "bazar" ? (
+        <CentralParkVenue />
+      ) : (
+        <GreenFieldVenue />
+      )}
+
+      <BackButton />
       {loading ? (
         <div className="text-white">Loading the tickets...</div>
       ) : (
         <Canvas
-          style={{ width: "100vw", height: "100vh" }}
+          style={{
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(27,29,34,1)",
+          }}
           camera={{ position: [3, 3, 3], fov: 20 }}
         >
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[0, 10, 5]} intensity={1} />
-            {/* <Venue data={booth} onTenantClick={toggleSidebarWithTenant} /> */}
-            <Bazar data={booth} onTenantClick={toggleSidebarWithTenant} />
-            {/* <ConcertFestival data={venuesData} /> */}
+            {venuesData.venueFileName === "bazar" ? (
+              <Bazar
+                data={venuesData.booth}
+                onTenantClick={toggleSidebarWithTenant}
+              />
+            ) : (
+              <Venue
+                data={venuesData.booth}
+                onTenantClick={toggleSidebarWithTenant}
+              />
+            )}
             <OrbitControls ref={orbitRef} />
           </Suspense>
         </Canvas>
