@@ -35,8 +35,8 @@ export default function EditUserPage() {
   console.log(input, "<<,");
   return (
     <>
+      <Navbar />
       <main className="bg-[rgba(27,29,34,1)] min-h-screen flex flex-col justify-center items-center">
-        <Navbar />
         {loading ? (
           <div className="text-white">Loading user data...</div>
         ) : (
@@ -111,7 +111,7 @@ export default function EditUserPage() {
                   <span className="highlight"></span>
                   <span className="bar"></span>
                   <label htmlFor="password" className="label">
-                    Password *required
+                    Old Password
                   </label>
                 </div>
                 <button
