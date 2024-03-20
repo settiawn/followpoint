@@ -83,7 +83,7 @@ export default async function Home() {
               Upcoming Events
             </h2>
           </div>
-          <div className="flex flex-grow -m-1 gap-5">
+          <div className="flex flex-wrap gap-5">
             {data.map((event, index) => (
               <EventCard data={event} key={index} />
             ))}
