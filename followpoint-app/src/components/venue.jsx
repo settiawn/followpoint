@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Html, useGLTF } from "@react-three/drei";
 
 //! JANGAN DISENTUH
@@ -32,6 +32,29 @@ export function Venue({ data, onTenantClick }) {
           boothPositions[index][1],
           boothPositions[index][2] + 100,
         ];
+        const [isHovered, setIsHovered] = useState(false);
+
+        const defaultStyle = {
+          color: "#fff",
+          background: "rgba(0, 0, 0, 0.5)",
+          border: "1px solid rgba(255, 255, 255, 0.5)",
+          cursor: "pointer",
+          padding: "5px 10px",
+          textAlign: "center",
+          textShadow: "0 0 4px rgba(0, 0, 0, 0.5)",
+          fontFamily: "Arial, sans-serif",
+          fontSize: "14px",
+          borderRadius: "4px",
+          transition: "all 0.3s ease",
+        };
+
+        const hoverStyle = {
+          ...defaultStyle,
+          background: "rgba(255, 255, 255, 0.7)",
+          color: "#000",
+          border: "1px solid #fff",
+        };
+
         return (
           <>
             <group
@@ -90,12 +113,10 @@ export function Venue({ data, onTenantClick }) {
               />
               <Html position={iconPosition} scaleFactor={10} center>
                 <button
-                  style={{
-                    color: "white",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                    padding: "5px",
-                    textAlign: "center",
-                  }}
+                  key={venue.name}
+                  style={isHovered ? hoverStyle : defaultStyle}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                   onClick={() => onTenantClick(venue)}
                 >
                   {venue.name}

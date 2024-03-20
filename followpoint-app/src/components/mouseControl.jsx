@@ -1,6 +1,15 @@
 export default function MouseControl() {
   return (
-    <main className="absolute bottom-0 left-0 m-4 p-6 bg-black bg-opacity-80 text-white rounded-lg">
+    <main
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        color: "white",
+        margin: "1rem",
+        padding: "1.5rem",
+        borderRadius: "0.5rem",
+      }}
+      className="absolute bottom-0 left-0"
+    >
       <h1 className="text-xl font-bold mb-4">Mouse Control</h1>
       <ul className="list-disc pl-5 space-y-2">
         <li>Left - Rotate</li>
