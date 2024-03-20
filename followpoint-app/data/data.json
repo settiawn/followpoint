@@ -8,7 +8,7 @@
     "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694296/Summer_Beats_General_1080x1080_ws1eni.jpg",
     "image": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710694297/csm_Summer_Beats_4f8b550344_fdio5j.jpg",
     "organizer": "Beats Entertainment Inc.",
-    "venueFileName": "concert-festival",
+    "venueFileName": "bazar",
     "tickets": [
       { "ticketId": "e1t1", "name": "friday", "price": 500000, "stock": 500 },
       { "ticketId": "e1t2", "name": "saturday", "price": 700000, "stock": 500 },
@@ -249,5 +249,41 @@
     ],
     "createdAt": "2024-03-17T00:00:00Z",
     "updatedAt": "2024-03-17T00:00:00Z"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962516/stock-photo-rock-music-flyer-live-event-poster-background-template-with-guitar-rock-n-roll-background-design-2001432545_znmmrv.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962509/istockphoto-964569164-612x612_s4ekm2.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962509/16824780418312_btvlvh.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962508/fleur-sciortino-summer-book-fest-poster_lfzt5b.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962506/1280w-WAaNGnbUNC0_hlysrd.webp"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962506/large-33-308x435_ipuyq9.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962506/4535650015b7608dce2f8e36a42785eb_odfuf7.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962505/9f45b74396846860c77ab1485e41aadc_vqseqf.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962816/37de5deb-1ca7-4e60-b254-374b08708817_jwlus1.webp"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710962816/d61c1d8bb37f7225c5fa56c28ba99276_ypuiba.jpg"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710963414/b48c4760-570c-4440-a637-ad717f48d1e2_couhwb.png"
+  },
+  {
+    "thumbnail": "https://res.cloudinary.com/dpsupok6p/image/upload/v1710963414/saturday-night-party-design-template-5c51d2955417c1fa121bcf02fce9ba40_screen_so6bw4.jpg"
   }
 ]
