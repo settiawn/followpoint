@@ -11,6 +11,8 @@ export default function DropdownSidebar() {
     setIsOpen(!isOpen);
   };
 
+  const isLoggedIn = () => document.cookie.includes("Authorization");
+
   return (
     <>
       <div className="relative z-30">
@@ -41,14 +43,6 @@ export default function DropdownSidebar() {
               Transactions
             </div>
           </Link>
-          <Link href="/login">
-            <div
-              className="text-yellow-400 text-lg mb-4 hover:text-white"
-              onClick={toggleSidebar}
-            >
-              Login
-            </div>
-          </Link>
           <Link href="/user/edit">
             <div
               className="text-yellow-400 text-lg mb-4 hover:text-white"
@@ -57,12 +51,26 @@ export default function DropdownSidebar() {
               Edit Profile
             </div>
           </Link>
-          <div
-            className="text-yellow-400 text-lg mb-4 hover:text-white hover:cursor-pointer"
-            onClick={() => {toggleSidebar; handleLogout()}}
-          >
-            Logout
-          </div>
+          {isLoggedIn() ? (
+            <div
+              className="text-yellow-400 text-lg mb-4 hover:text-white cursor-pointer"
+              onClick={() => {
+                handleLogout();
+                toggleSidebar();
+              }}
+            >
+              Logout
+            </div>
+          ) : (
+            <Link href="/login">
+              <div
+                className="text-yellow-400 text-lg mb-4 hover:text-white"
+                onClick={toggleSidebar}
+              >
+                Login
+              </div>
+            </Link>
+          )}
         </div>
       </div>
       <style jsx>{`
