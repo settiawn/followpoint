@@ -17,6 +17,7 @@ export const getAllEventData = async () => {
       headers: {
         "Content-Type": "application/json",
       },
+      cache: "no-store"
     }
   );
 
@@ -36,6 +37,9 @@ export default async function Home() {
       <main className="flex flex-col min-h-screen bg-[rgba(27,29,34,1)]">
         <Navbar />
         <Banner />
+        <div className="container mx-auto px-4 text-white text-center text-2xl mt-16 font-semibold font-sans">
+          <h1>Follow Point is an app that gives info about various events. Users can see ongoing events, buy tickets, and use 3D maps to find event locations easily. It helps users find events they like and get tickets hassle-free.</h1>
+        </div>
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-white mb-10">
