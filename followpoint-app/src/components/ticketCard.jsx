@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
+import { formatDate } from "@/utils/dateFormat";
 
 export default function TicketCard({ data }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -27,7 +28,7 @@ export default function TicketCard({ data }) {
         </div>
       </div>
       <div className="flex justify-between items-center mb-2">
-        <div>Date: {data.eventInfo.date}</div>
+        <div>{formatDate(data.eventInfo.date)}</div>
         <div>
           Status:{" "}
           <span
